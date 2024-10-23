@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_subject_et_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialog_subject_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="subject"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_description_et_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_subject_et_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialog_description_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="description"
+            android:maxLines="5"
+            android:inputType="textMultiLine" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_department_et_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_description_et_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialog_department_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="department"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_username_et_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_department_et_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialog_username_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="user name"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_state_menu_ti_layout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:hint="state"
+        app:layout_constraintEnd_toStartOf="@id/dialog_priority_menu_ti_layout"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_username_et_layout">
+        <!--        app:startIconDrawable="@drawable/ic_menu_24"-->
+
+
+        <AutoCompleteTextView
+            android:id="@+id/dialog_state_menu_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="state"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_priority_menu_ti_layout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:hint="priority"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dialog_state_menu_ti_layout"
+        app:layout_constraintTop_toTopOf="@+id/dialog_state_menu_ti_layout">
+        <!--        app:startIconDrawable="@drawable/ic_menu_24"-->
+
+
+        <AutoCompleteTextView
+            android:id="@+id/dialog_priority_menu_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="priority"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dialog_mandate_et_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_state_menu_ti_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dialog_mandate_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="mandate"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

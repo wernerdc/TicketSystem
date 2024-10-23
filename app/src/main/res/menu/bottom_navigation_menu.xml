@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_ticket"
+        android:enabled="true"
+        android:icon="@drawable/ic_tickets_outline_24"
+        android:title="Tickets"/>
+    <item
+        android:id="@+id/nav_chart"
+        android:enabled="true"
+        android:icon="@drawable/ic_stats_24"
+        android:title="Chart"/>
+    <item
+        android:id="@+id/nav_database"
+        android:enabled="true"
+        android:icon="@drawable/ic_database"
+        android:title="Database"/>
+</menu>

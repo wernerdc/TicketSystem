@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <View
+                android:id="@+id/ticket_item_state_marker"
+                android:layout_width="8dp"
+                android:layout_height="0dp"
+                android:background="#F44336"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ticket_item_edit_state_button"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="edit state"
+                app:icon="@drawable/baseline_published_with_changes_24"
+                app:layout_constraintStart_toEndOf="@id/ticket_item_state_marker"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ticket_item_text_state"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/ticket_item_edit_state_button"
+                app:layout_constraintStart_toEndOf="@id/ticket_item_state_marker"
+                app:layout_constraintTop_toBottomOf="@+id/ticket_item_edit_state_button" />
+
+            <TextView
+                android:id="@+id/ticket_item_text_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/ticket_item_right_button"
+                app:layout_constraintStart_toEndOf="@+id/ticket_item_edit_state_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ticket_item_text_row2_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/ticket_item_text_row2_department"
+                app:layout_constraintStart_toEndOf="@+id/ticket_item_edit_state_button"
+                app:layout_constraintTop_toBottomOf="@id/ticket_item_text_header" />
+
+            <TextView
+                android:id="@+id/ticket_item_text_row2_department"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/ticket_item_right_button"
+                app:layout_constraintStart_toEndOf="@+id/ticket_item_text_row2_date"
+                app:layout_constraintTop_toBottomOf="@id/ticket_item_text_header" />
+
+            <TextView
+                android:id="@+id/ticket_item_text_row3_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/ticket_item_text_row3_priority"
+                app:layout_constraintStart_toEndOf="@+id/ticket_item_edit_state_button"
+                app:layout_constraintTop_toBottomOf="@+id/ticket_item_text_row2_date" />
+
+            <TextView
+                android:id="@+id/ticket_item_text_row3_priority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="12dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/ticket_item_right_button"
+                app:layout_constraintStart_toEndOf="@+id/ticket_item_text_row3_id"
+                app:layout_constraintTop_toBottomOf="@id/ticket_item_text_row2_date" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ticket_item_right_button"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="edit ticket"
+                app:icon="@drawable/ic_edit_square_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--This is the layout "expanded_view" we will
+            hide initially and show as expanded
+            layout when user clicks on any of the item-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ticket_item_expanded_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ticket_item_text_row3_id">
+
+                <TextView
+                    android:id="@+id/ticket_item_text_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/ticket_item_text_mandate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ticket_item_text_mandate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ticket_item_text_user"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ticket_item_text_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ticket_item_text_user" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Ticket System</string>
+
+    <string name="edit_ticket">edit ticket</string>
+    <string name="add_ticket">add ticket</string>
+    <string name="set_state">edit ticket state</string>
+
+    <string-array name="ticket_states">
+        <item>Waiting</item>
+        <item>Assigned</item>
+        <item>In Progress</item>
+        <item>Resolved</item>
+        <item>No Solution</item>
+    </string-array>
+
+    <string-array name="ticket_priorities">
+        <item>Low</item>
+        <item>Regular</item>
+        <item>High</item>
+        <item>Very High</item>
+    </string-array>
+
+</resources>
